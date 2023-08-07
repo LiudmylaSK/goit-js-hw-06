@@ -19,7 +19,7 @@ const galleryItems = images
   .map(
     (image) =>
       `<li class="gallery-item">
-      <img src="${image.url}" alt="${image.alt}" class="gallery-image" style="width: 100%; height: auto;"></img>
+      <img src="${image.url}" alt="${image.alt}" class="gallery-image" style="width: 400px; height: auto;"></img>
     </li>`
   )
   .join("");
@@ -27,5 +27,7 @@ const galleryItems = images
 galleryList.insertAdjacentHTML("beforeend", galleryItems);
 
 galleryList.style.display = "flex";
+galleryList.style.flexDirection = "column";
+galleryList.style.alignItems = "center";
 galleryList.style.gap = "10px";
 galleryList.style.listStyle = "none";

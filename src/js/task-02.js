@@ -7,7 +7,7 @@ const ingredients = [
   "Condiments",
 ];
 
-const ulElement = document.querySelector("#ingredients");
+const ulElement = document.getElementById("ingredients");
 
 ingredients.forEach((ingredient) => {
   const liElement = document.createElement("li");
