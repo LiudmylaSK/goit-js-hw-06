@@ -26,8 +26,10 @@ const galleryItems = images
 
 galleryList.insertAdjacentHTML("beforeend", galleryItems);
 
-galleryList.style.display = "flex";
-galleryList.style.flexDirection = "column";
-galleryList.style.alignItems = "center";
-galleryList.style.gap = "10px";
-galleryList.style.listStyle = "none";
+galleryList.style.cssText = `
+display: flex;
+flex-direction: column;
+align-items: center;
+gap: 10px;
+list-style: none;
+`;

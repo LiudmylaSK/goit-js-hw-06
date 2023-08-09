@@ -1,10 +1,3 @@
-// Напиши скрипт створення і очищення колекції елементів. Користувач вводить кількість елементів в input і натискає кнопку Створити, після чого рендериться колекція. Натисненням на кнопку Очистити, колекція елементів очищається.
-
-// Створи функцію createBoxes(amount), яка приймає один параметр - число. Функція створює стільки <div>, скільки вказано в amount і додає їх у div#boxes.
-
-//
-// Створи функцію destroyBoxes(), яка очищає вміст div#boxes, у такий спосіб видаляючи всі створені елементи.
-
 function getRandomHexColor() {
   return `#${Math.floor(Math.random() * 16777215)
     .toString(16)
@@ -22,11 +15,15 @@ destroyButton.addEventListener("click", destroyBoxes);
 function createBoxes() {
   const amount = parseInt(input.value);
   const boxes = [];
+
   for (let i = 0; i < amount; i++) {
     const box = document.createElement("div");
-    box.style.width = `${30 + i * 10}px`;
-    box.style.height = `${30 + i * 10}px`;
-    box.style.backgroundColor = getRandomHexColor();
+    const size = 30 + i * 10;
+    box.style.cssText = `
+    width: ${size}px;
+    height: ${size}px;
+    background-color: ${getRandomHexColor()};
+    `;
     boxes.push(box);
   }
 
